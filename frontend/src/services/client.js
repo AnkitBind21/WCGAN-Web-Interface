@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "/api",
+  baseURL: "https://wcgan-web-interface.onrender.com/api",
   headers: { "Content-Type": "application/json" },
 });
 
