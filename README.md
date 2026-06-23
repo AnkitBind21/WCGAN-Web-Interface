@@ -4,7 +4,7 @@ A full-stack web application for conditional face generation using a Wasserstein
 
 ## Live Demo
 
-Frontend: https://wcgan-web-interface-g33yu1trz-stasshhy.vercel.app
+Frontend: https://wcgan-web-interface.vercel.app
 
 Backend API: https://wcgan-web-interface.onrender.com/api/health
 
