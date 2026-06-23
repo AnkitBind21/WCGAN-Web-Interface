@@ -3,7 +3,7 @@ import { Download, Clock } from "lucide-react";
 export default function HistoryCard({ entry }) {
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = entry.image_url;
+    link.href = `https://wcgan-web-interface.onrender.com${entry.image_url}`;
     link.download = `wcgan_${entry.gender}_${entry.smile ? "smiling" : "neutral"}_${entry.id}.png`;
     link.click();
   };
@@ -12,7 +12,7 @@ export default function HistoryCard({ entry }) {
     <div className="glass overflow-hidden group hover:bg-white/[0.07] transition-all duration-300">
       <div className="relative">
         <img
-          src={entry.image_url}
+          src={`https://wcgan-web-interface.onrender.com${entry.image_url}`}
           alt={`Face ${entry.id}`}
           className="w-full aspect-square object-cover"
         />

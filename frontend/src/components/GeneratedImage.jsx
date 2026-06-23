@@ -4,7 +4,7 @@ export default function GeneratedImage({ imageUrl, gender, smile, timestamp, loa
   const handleDownload = () => {
     if (!imageUrl) return;
     const link = document.createElement("a");
-    link.href = imageUrl;
+    link.href = `https://wcgan-web-interface.onrender.com${imageUrl}`;
     link.download = `wcgan_${gender}_${smile ? "smiling" : "neutral"}.png`;
     link.click();
   };
@@ -38,7 +38,7 @@ export default function GeneratedImage({ imageUrl, gender, smile, timestamp, loa
         <>
           <div className="relative group">
             <img
-              src={imageUrl}
+              src={`https://wcgan-web-interface.onrender.com${imageUrl}`}
               alt={`Generated ${gender} ${smile ? "smiling" : "neutral"} face`}
               className="w-64 h-64 rounded-xl object-cover shadow-2xl animate-fade-in"
             />
