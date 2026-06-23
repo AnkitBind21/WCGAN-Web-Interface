@@ -105,7 +105,7 @@ export default function Dashboard() {
                 {comparisonImages.map((img, idx) => (
                   <div key={img.id || idx} className="glass overflow-hidden group cursor-pointer">
                     <img
-                      src={img.image_url}
+                      src={`https://wcgan-web-interface.onrender.com${img.image_url}`}
                       alt={`Generation ${img.id}`}
                       className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-300"
                     />
