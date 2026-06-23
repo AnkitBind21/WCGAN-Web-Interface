@@ -1,21 +1,50 @@
 # WCGAN Web Interface
 
-A full-stack web application for conditional face generation using a Wasserstein Conditional Generative Adversarial Network (WCGAN). The project combines a PyTorch-based deep learning backend with a modern React frontend, enabling users to generate synthetic human faces based on selected attributes through an intuitive web interface.
+A full-stack web application for conditional face generation using a Wasserstein Conditional Generative Adversarial Network (WCGAN-GP). The project combines a PyTorch-based deep learning backend with a modern React frontend, enabling users to generate synthetic human faces based on selected attributes through an intuitive web interface.
+
+## Live Demo
+
+Frontend: https://wcgan-web-interface-g33yu1trz-stasshhy.vercel.app
+
+Backend API: https://wcgan-web-interface.onrender.com/api/health
+
+## Screenshots
+
+### Landing Page
+
+![Landing Page](screenshots/landing.png)
+
+### Face Generation Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+### Generated Face Example
+
+![Generated Face](screenshots/generated-face.png)
+
+### Generation History
+
+![History](screenshots/history.png)
 
 ## Overview
 
-WCGAN Web Interface provides an interactive platform for generating realistic facial images conditioned on specific attributes such as gender and expression. The system leverages the stability of Wasserstein GAN training and offers a seamless user experience through a responsive web-based interface.
+WCGAN Web Interface provides an interactive platform for generating facial images conditioned on attributes such as:
+
+* Gender (Male / Female)
+* Expression (Smiling / Neutral)
+
+The model was trained on approximately 9,500 CelebA images and deployed as a complete end-to-end web application.
 
 ## Features
 
-* Conditional face generation using WCGAN
-* Attribute-based image synthesis
+* Conditional face generation using WCGAN-GP
+* Gender and expression control
 * Flask REST API backend
-* React and Vite frontend
+* React + Vite frontend
 * Generation history tracking
-* Responsive and modern user interface
-* Modular and scalable project structure
-* PyTorch-based deep learning implementation
+* Image download functionality
+* Responsive modern UI
+* Live deployment using Vercel and Render
 
 ## Technology Stack
 
@@ -24,19 +53,32 @@ WCGAN Web Interface provides an interactive platform for generating realistic fa
 * React.js
 * Vite
 * Tailwind CSS
-* JavaScript
+* Axios
 
 ### Backend
 
 * Flask
 * Python
 * PyTorch
+* Flask-CORS
 
 ### Machine Learning
 
-* Wasserstein Conditional GAN (WCGAN)
-* Deep Convolutional Neural Networks
+* WCGAN-GP (Wasserstein GAN with Gradient Penalty)
 * Conditional Image Generation
+* Deep Convolutional Neural Networks
+
+## Deployment Architecture
+
+Frontend (Vercel)
+↓
+REST API Requests
+↓
+Flask Backend (Render)
+↓
+PyTorch WCGAN-GP Model
+↓
+Generated Face Images
 
 ## Project Structure
 
@@ -49,6 +91,7 @@ WCGAN-Web-Interface/
 │   ├── model.py
 │   ├── train.py
 │   ├── utils.py
+│   ├── checkpoints/
 │   └── req.txt
 │
 ├── frontend/
@@ -62,7 +105,7 @@ WCGAN-Web-Interface/
 
 ## Installation
 
-### Clone the Repository
+### Clone Repository
 
 ```bash
 git clone https://github.com/AnkitBind21/WCGAN-Web-Interface.git
@@ -73,7 +116,6 @@ cd WCGAN-Web-Interface
 
 ```bash
 cd backend
-
 python -m venv venv
 
 # Windows
@@ -86,13 +128,12 @@ pip install -r req.txt
 
 ```bash
 cd frontend
-
 npm install
 ```
 
 ## Running the Application
 
-### Start Backend Server
+### Start Backend
 
 ```bash
 cd backend
@@ -106,36 +147,26 @@ cd frontend
 npm run dev
 ```
 
-The frontend will be available on the local Vite development server, while the Flask backend will handle image generation requests.
+## Training Details
 
-## Model Weights
-
-The trained WCGAN model weights are not included in this repository due to file size limitations. Download or train the model separately and place the generated weight files in the appropriate backend directory before running inference.
-
-## Applications
-
-* AI-generated face synthesis
-* Deep learning research and experimentation
-* Conditional image generation studies
-* Computer vision demonstrations
-* Educational GAN projects
+* Dataset: CelebA
+* Images Used: ~9,500
+* Architecture: WCGAN-GP
+* Framework: PyTorch
+* Training Device: NVIDIA RTX 3050 Laptop GPU (4GB VRAM)
 
 ## Future Improvements
 
 * Additional facial attributes
-* User authentication
-* Cloud deployment
-* Image download and sharing features
-* Real-time generation optimization
-* Multiple pretrained model support
+* Higher-resolution generation
+* Better identity consistency
+* Multiple pretrained models
+* Cloud GPU inference
 
 ## Author
 
 Ankit Bind
 
 B.Sc. Information Technology
+
 Machine Learning | Deep Learning | Computer Vision | Artificial Intelligence
-
-## License
-
-This project is intended for educational and research purposes.
